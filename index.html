@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shapely — Interactive Geometry for the Classroom</title>
+  <meta name="description" content="Shapely is a SaaS visual learning tool for middle school geometry. Rotate prisms, build composite shapes, and see surface area, volume, and perimeter come to life." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="landing">
+
+  <header class="nav">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"></span>
+      <span class="brand-name">Shapely</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#shapes">Shape library</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="app.html">Sign in</a>
+      <a class="btn btn-primary" href="app.html">Launch app</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">Built for middle school math teachers</span>
+      <h1>See geometry. <span class="grad">Then solve it.</span></h1>
+      <p class="lead">
+        Shapely turns abstract formulas into rotating, labelled 3D models.
+        Plug in numbers and watch surface area, volume, and perimeter
+        recalculate in real time — perfect for classrooms, tutors, and
+        homework.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="app.html">Try it free →</a>
+        <a class="btn btn-ghost btn-lg" href="#features">See how it works</a>
+      </div>
+      <ul class="hero-bullets">
+        <li>No install — works in any browser</li>
+        <li>Composite shapes &amp; printable diagrams</li>
+        <li>Aligned to Common Core 6.G &amp; 7.G</li>
+      </ul>
+    </div>
+    <div class="hero-visual">
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-card hero-card-1">
+        <div class="hero-card-label">Volume</div>
+        <div class="hero-card-value">V = l·w·h</div>
+      </div>
+      <div class="hero-card hero-card-2">
+        <div class="hero-card-label">Surface area</div>
+        <div class="hero-card-value">SA = 2(lw+lh+wh)</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="logos">
+    <p>Trusted in classrooms from Brooklyn to Berkeley</p>
+    <div class="logo-row">
+      <span>Riverside Middle</span>
+      <span>Oak Park Academy</span>
+      <span>STEM Bridge</span>
+      <span>Lincoln Prep</span>
+      <span>Coastline District</span>
+    </div>
+  </section>
+
+  <section id="features" class="features">
+    <h2 class="section-title">Everything you need to teach 3D geometry</h2>
+    <p class="section-sub">A focused toolkit — no clutter, no logins for students.</p>
+    <div class="feature-grid">
+      <div class="feature">
+        <div class="feature-icon">◇</div>
+        <h3>Rotate &amp; explore</h3>
+        <p>Click and drag any prism. Auto-rotation makes it easy to spot every face, edge, and vertex from the front of the room.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">∑</div>
+        <h3>Live formulas</h3>
+        <p>Type a side length and watch surface area, volume, and perimeter update instantly — with the substituted formula shown step by step.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">⌬</div>
+        <h3>Composite shapes</h3>
+        <p>Stack a triangle on a rectangle, drop a cone onto a cylinder, or build an L-shape. Great for real-world word problems.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">⌗</div>
+        <h3>Smart labels</h3>
+        <p>Sides auto-label as <em>a</em>, <em>b</em>, <em>c</em>… or as the actual numbers your students enter. Toggle either at any time.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">◐</div>
+        <h3>Elegant in any room</h3>
+        <p>High-contrast, projector-ready visuals with a calm dark-mode palette that won’t blow out a classroom screen.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">↺</div>
+        <h3>Worksheet export</h3>
+        <p>Snap a labelled diagram and drop it into Google Docs, Canvas, or a printed worksheet in two clicks.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="shapes" class="shape-library">
+    <h2 class="section-title">A full library, ready on day one</h2>
+    <p class="section-sub">Twelve core shapes plus seven composite presets.</p>
+    <div class="shape-grid">
+      <div class="shape-tile" data-shape="cube">Cube</div>
+      <div class="shape-tile" data-shape="rect-prism">Rectangular prism</div>
+      <div class="shape-tile" data-shape="tri-prism">Triangular prism</div>
+      <div class="shape-tile" data-shape="cylinder">Cylinder</div>
+      <div class="shape-tile" data-shape="cone">Cone</div>
+      <div class="shape-tile" data-shape="sphere">Sphere</div>
+      <div class="shape-tile" data-shape="pyramid">Square pyramid</div>
+      <div class="shape-tile" data-shape="rectangle">Rectangle</div>
+      <div class="shape-tile" data-shape="triangle">Triangle</div>
+      <div class="shape-tile" data-shape="circle">Circle</div>
+      <div class="shape-tile" data-shape="trapezoid">Trapezoid</div>
+      <div class="shape-tile" data-shape="hexagon">Hexagon</div>
+      <div class="shape-tile composite" data-shape="house">Triangle on rectangle</div>
+      <div class="shape-tile composite" data-shape="ice-cream">Cone + sphere</div>
+      <div class="shape-tile composite" data-shape="silo">Cylinder + cone</div>
+      <div class="shape-tile composite" data-shape="obelisk">Cube + pyramid</div>
+      <div class="shape-tile composite" data-shape="lshape">L-shape</div>
+      <div class="shape-tile composite" data-shape="capsule">Cylinder + 2 hemispheres</div>
+      <div class="shape-tile composite" data-shape="tent">Triangular prism + rect</div>
+    </div>
+  </section>
+
+  <section id="pricing" class="pricing">
+    <h2 class="section-title">Simple pricing for every classroom</h2>
+    <p class="section-sub">Start free. Upgrade when you’re ready.</p>
+    <div class="pricing-grid">
+      <div class="plan">
+        <h3>Student</h3>
+        <p class="price">Free</p>
+        <ul>
+          <li>All 2D &amp; 3D shapes</li>
+          <li>Live formulas</li>
+          <li>Up to 3 saved diagrams</li>
+        </ul>
+        <a class="btn btn-ghost" href="app.html">Start free</a>
+      </div>
+      <div class="plan plan-featured">
+        <span class="ribbon">Most popular</span>
+        <h3>Teacher</h3>
+        <p class="price">$8 <span>/month</span></p>
+        <ul>
+          <li>Everything in Student</li>
+          <li>Composite shape builder</li>
+          <li>Worksheet export (PDF + PNG)</li>
+          <li>Class roster &amp; assignments</li>
+        </ul>
+        <a class="btn btn-primary" href="app.html">Start 14-day trial</a>
+      </div>
+      <div class="plan">
+        <h3>School</h3>
+        <p class="price">Custom</p>
+        <ul>
+          <li>District-wide SSO</li>
+          <li>Curriculum mapping</li>
+          <li>PD for teachers</li>
+        </ul>
+        <a class="btn btn-ghost" href="#">Talk to sales</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq">
+    <h2 class="section-title">Common questions</h2>
+    <div class="faq-grid">
+      <div>
+        <h4>Do students need accounts?</h4>
+        <p>No. Share a class link and they’re in. Teachers only.</p>
+      </div>
+      <div>
+        <h4>Will it run on Chromebooks?</h4>
+        <p>Yes — Shapely runs entirely in the browser using WebGL.</p>
+      </div>
+      <div>
+        <h4>Can I customize the formulas shown?</h4>
+        <p>You can switch between symbolic (a, b, h) and numeric labels with one click.</p>
+      </div>
+      <div>
+        <h4>What standards does it support?</h4>
+        <p>Common Core 6.G.1–4, 7.G.4–6, and most state equivalents.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Ready to make geometry click?</h2>
+    <p>Open the app — no signup needed for the demo.</p>
+    <a class="btn btn-primary btn-lg" href="app.html">Launch Shapely →</a>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-brand">
+      <span class="brand-mark"></span>
+      <strong>Shapely</strong>
+      <span class="muted">© 2026 Shapely Labs</span>
+    </div>
+    <div class="footer-links">
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="app.html">App</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </footer>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+      }
+    }
+  </script>
+  <script type="module" src="js/landing.js"></script>
+</body>
+</html>

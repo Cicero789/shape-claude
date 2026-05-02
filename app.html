@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shapely — Workspace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body class="app">
+
+  <header class="app-nav">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"></span>
+      <span class="brand-name">Shapely</span>
+    </a>
+    <div class="app-nav-mid">
+      <span class="muted">Workspace ›</span>
+      <strong id="current-shape-title">Rectangular prism</strong>
+    </div>
+    <div class="app-nav-actions">
+      <button class="btn btn-ghost" id="toggle-rotate" title="Toggle auto-rotation">↻ Auto-rotate</button>
+      <button class="btn btn-ghost" id="toggle-labels" title="Toggle numeric vs symbolic labels">a,b,c ↔ #</button>
+      <button class="btn btn-ghost" id="reset-view" title="Reset camera">⌖ Reset view</button>
+      <a class="btn btn-primary" href="index.html">Done</a>
+    </div>
+  </header>
+
+  <main class="app-shell">
+
+    <aside class="sidebar">
+      <div class="panel">
+        <h3 class="panel-title">Shape</h3>
+        <div class="tab-row">
+          <button class="tab active" data-tab="prisms">3D Prisms</button>
+          <button class="tab" data-tab="flat">2D Shapes</button>
+          <button class="tab" data-tab="composite">Composite</button>
+        </div>
+        <div class="shape-picker" id="shape-picker"></div>
+      </div>
+
+      <div class="panel">
+        <h3 class="panel-title">Dimensions</h3>
+        <div class="dim-list" id="dim-list"></div>
+        <p class="hint">Leave blank to keep symbolic labels (a, b, h…).</p>
+      </div>
+
+      <div class="panel">
+        <h3 class="panel-title">Calculations</h3>
+        <div class="calc-list" id="calc-list"></div>
+      </div>
+
+      <div class="panel panel-soft">
+        <h3 class="panel-title">Teacher tip</h3>
+        <p id="teacher-tip" class="tip-body">
+          Drag the model to rotate. Type a number into any side to see
+          the formula re-evaluate live.
+        </p>
+      </div>
+    </aside>
+
+    <section class="viewport">
+      <div class="viewport-frame">
+        <canvas id="stage"></canvas>
+        <svg id="overlay" xmlns="http://www.w3.org/2000/svg"></svg>
+        <div class="viewport-foot">
+          <span id="hint-drag">Drag to rotate · scroll to zoom</span>
+          <span class="muted" id="shape-formula"></span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
